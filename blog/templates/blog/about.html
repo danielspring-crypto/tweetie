@@ -1,0 +1,109 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    {% if title %}
+        <title>tweetie - {{ title }}</title>
+    {% else %}
+        <title>tweetie</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">tweetie</a>
+          <a>T3@m_XuNt3rz
+          <img src="https://scontent.frgn8-1.fna.fbcdn.net/v/t1.0-9/78788308_963341264044778_8321043847991787520_n.jpg?_nc_cat=103&_nc_ohc=2ndmHm5YVcMAQlOlc8jZLyAxuvQX76nw0ZXoPYflteJECFx6xUBBiChHQ&_nc_ht=scontent.frgn8-1.fna&oh=9662717f139cc5ec3140f2fc739407fc&oe=5E853353" width="30" height="30" class="d-inline-block align-top" alt=""></a>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F93%2Fd3%2Fe3%2F93d3e31639a4d07613de9dccdc8bd5e8.png&f=1&nofb=1" class="card-img-top" alt="..." height="250" width="250">
+                <hr>
+                <div class="card-body">
+                  <h5 class="card-title">Daniel Spring</h5>
+                  <p class="card-text">Developer</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fc1.staticflickr.com%2F1%2F70%2F206727972_20772b1c9c.jpg&f=1&nofb=1" class="card-img-top" alt="..." height="250" width="250">
+                <hr>
+                <div class="card-body">
+                  <h5 class="card-title">Bl@cK_V1tu@l</h5>
+                  <p class="card-text">Pentester</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://regmedia.co.uk/2015/09/07/debian_logo.jpg?x=1200&y=794" class="card-img-top" alt="..." height="250" width="250">
+                <hr>
+                <div class="card-body">
+                  <h5 class="card-title">TyPh0oN</h5>
+                  <p class="card-text">Pentester</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fsysadmin.lk%2Fwp-content%2Fuploads%2F2016%2F06%2Fredhat-logo-640x336.jpg&f=1&nofb=1" class="card-img-top" alt="..." height="250" width="250"><hr>
+                <div class="card-body">
+                  <h5 class="card-title">k3lv1N</h5>
+                  <p class="card-text">RedHat Sysadmin</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 mx-auto">
+          <div class="content-section">
+            <p class='text-muted' align='center'>
+              <i class='fab fa-python' style='font-size:36px;color:#000'></i>
+              <i class='fab fa-html5' style='font-size:36px;color:#000'></i>
+              <i class='fab fa-linux' style='font-size:36px;color:#000'></i>
+              <i class='fab fa-css3-alt' style='font-size:36px;color:#000'></i>
+              <i class='fab fa-react' style='font-size:36px;color:#000'></i>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">
+                  <p align='center'><strong>tweetie version 1.1</strong></p>  
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
